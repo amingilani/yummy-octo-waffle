@@ -34,7 +34,7 @@ describe('Api Tests', function() {
     function(done) {
       request(localhost + "channels?l=badRequest", function(err, res, body) {
         ip = JSON.parse(body).ip;
-        ip.should.exist();
+        should.exist(ip);
         done();
       });
     });
