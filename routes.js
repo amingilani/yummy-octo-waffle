@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/channels', function(req, res) {
-  console.log(req.ip);
   var lat = req.query.l.split(",")[0];
   var long = req.query.l.split(",")[1];
   var result = [];
@@ -35,8 +34,6 @@ router.get('/channels', function(req, res) {
   } else {
     console.log("channel not found, reverting to geolocation");
     request("http://www.telize.com/geoip/" + ip, function(error, response, body) {
-      console.log(error, response, body);
-        console.log(body);
         res.send(body);
     });
   }
