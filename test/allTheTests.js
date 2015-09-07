@@ -10,7 +10,6 @@ describe('Connection', function(done) {
   it('Should return Karachi on looking up 119.63.142.23 at Telize.com', function(done) {
     request(telize + "119.63.142.23", function(err, res, body) {
 
-      console.log(body);
       body = JSON.parse(body);
       body.city.should.equal("Karachi");
 
